@@ -8,3 +8,4 @@ CREATE TABLE user
 ); 
 
 INSERT INTO user (username, passwd_hash, first_name, last_name, email) VALUES ('Nat','2e8c0277e396fabf683e56c8b7fa7e6dad68c679','Nathan','Arpin','arpinnathan@gmail.com');
+INSERT INTO user (username, passwd_hash, first_name, last_name, email) VALUES ('nicky','2e8c0277e396fabf683e56c8b7fa7e6dad68c679','Annick','Melse','annick.melse@gmail.com');
