@@ -96,18 +96,11 @@ INSERT INTO user (username, passwd_hash, first_name, last_name, email, role_id) 
 INSERT INTO user (username, passwd_hash, first_name, last_name, email, role_id) VALUES ('nicky','2e8c0277e396fabf683e56c8b7fa7e6dad68c679','Annick','Melse','annick.melse@gmail.com',1);
 
 INSERT INTO sport (name, description) VALUES ('snowboard', 'sport that involves descending a snow-covered slope while standing on a snowboard attached to a riders feet');
-INSERT INTO sport (name, description) VALUES ('ice hockey', 'contact team sport played on ice, in which two teams of skaters use their sticks to shoot a puck into their opponents goal to score points'); 
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-INSERT INTO sport (name, description) VALUES (
-
-
-
-
+INSERT INTO sport (name, description) VALUES ('ice hockey', 'contact team sport played on ice, in which two teams of skaters use their sticks to shoot a puck into their opponents goal to score points');
+INSERT INTO sport (name, description) VALUES ('football', 'team sport played with a ball between two teams of eleven players. It the worlds most popular sport.  The game is played on a pitch with a goal at each end. The object of the game is to score in the opposite goal');
+INSERT INTO sport (name, description) VALUES ('basketball', 'team sport in which two teams, most commonly of five players each, opposing one another on a court, with the primary objective of shooting a basketball through the defenders hoop,  while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three');
+INSERT INTO sport (name, description) VALUES ('golf', 'club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible');
+INSERT INTO sport (name, description) VALUES ('rugby', 'contact team sport which is based on running with the ball in hand. It is a game between two teams of 15 players using an oval-shaped ball on a field with H-shaped goalposts at each end');
 
 
 
