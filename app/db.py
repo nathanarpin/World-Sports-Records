@@ -69,3 +69,9 @@ class db_handler:
             Add a new user
         """
         self.edit('INSERT INTO user (username, passwd_hash, first_name, last_name, email) VALUES (?,?,?,?,?)', (username, passwd_hash, firstname, lastname, email,))
+    
+    def add_metric(self, username, ...):
+        """
+            Add a new metric
+        """
+        self.edit('INSERT INTO metric (username, ...) VALUES (?,...)', (username, ...,))

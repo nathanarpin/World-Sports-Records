@@ -101,10 +101,10 @@ INSERT INTO sport (name, description) VALUES ('football', 'team sport played wit
 INSERT INTO sport (name, description) VALUES ('basketball', 'team sport in which two teams, most commonly of five players each, opposing one another on a court, with the primary objective of shooting a basketball through the defenders hoop,  while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three');
 INSERT INTO sport (name, description) VALUES ('golf', 'club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible');
 INSERT INTO sport (name, description) VALUES ('rugby', 'contact team sport which is based on running with the ball in hand. It is a game between two teams of 15 players using an oval-shaped ball on a field with H-shaped goalposts at each end');
-
-
-
-
+INSERT INTO sport (name, description) VALUES ('ski', 'sport based on sliding down snow-covered slopes on skis with fixed-heel bindings');
+INSERT INTO sport (name, description) VALUES ('sport of athletics', 'collection of sporting events that involve competitive running, jumping, throwing, and walking. The most common types of athletics competitions are track and field, road running, cross country running, and race walking. ');
+INSERT INTO sport (name, description) VALUES ('tennis', 'racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket to strike a rubber ball over or around a net and into the opponents court');
+INSERT INTO sport (name, description) VALUES ('formula 1', 'highest class of single-seater auto racing');
 
 
 

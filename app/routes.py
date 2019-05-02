@@ -99,3 +99,33 @@ def sports():
     title="MyApp - List of sports"
     db = get_db()
     sports = db.query("SELECT * from sport")
+    return render_template('sports.html', title=title, sports=sports)
+
+@app.route('/metrics')
+def metrics():
+    title="MyApp - List Metrics"
+    db = get_db()
+    sports = db.query("SELECT * from metric")
+    return render_template('metrics.html', title=title, metrics=metrics)
+
+@app.route('/addmetric', methods=['POST', 'GET'])
+def add_metric():
+    title="MyApp - Add a new metric"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            firstname = request.form['firstname']
+            lastname = request.form['lastname']
+            email = request.form['email']
+            username = request.form['username']
+            passwd = request.form['password']
+            if firstname is None or lastname is None or email is None or username is None or passwd is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_user(username, passwd_hash, firstname, lastname, email)
+                msg = 'Metric was successfully added!'
+        return render_template('addmetric.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
