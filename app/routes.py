@@ -94,10 +94,8 @@ def ex1():
     ]
     return render_template('ex1.html', title=title, user=user, posts=posts)
 
-
 @app.route('/sports')
 def sports():
     title="MyApp - List of sports"
     db = get_db()
     sports = db.query("SELECT * from sport")
-    return render_template('sports.html', title=title, sports=sports)
