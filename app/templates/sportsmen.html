@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<h1>List of Sportsmen</h1>
+      		<br>
+		<table class="table">
+		<thead>
+			<tr><td><strong>Name</strong></td><td><strong>Nationality</strong></td><td><strong>Birth year</strong></td><td><strong>Gender</strong></td></tr>
+		</thead>
+		<tbody>
+    		{% for sportsmen  in sportsmen %}
+		<tr>
+			<td>{{ sportsmen.name }}</td><td>{{ sportmen.nationality }}</td><td>{{ sportsmen.birth year }}</td><td>{{ sportmen.gender }}</td>
+		</tr>
+    		{% endfor %}
+		</tbody>
+		</table>
+	</div>
+{% endblock %}

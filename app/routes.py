@@ -84,8 +84,7 @@ def ex1():
     user = {'username': 'Test'}
     posts = [
         {
-            'author': {'username': 'Rambo'},
-            'body': 'Beautiful day in Geneva!'
+            'body': 'Welcome to World Sports Records!'
         },
         {
             'author': {'username': 'Susan'},
@@ -101,11 +100,30 @@ def sports():
     sports = db.query("SELECT * from sport")
     return render_template('sports.html', title=title, sports=sports)
 
+@app.route('/addsport', methods=['POST', 'GET'])
+def add_sport():
+    title="MyApp - Add a new sport"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            name = request.form['name']
+            description = request.form['description']
+            if name is None or description is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_user(username, passwd_hash, firstname, lastname, email)
+                msg = 'Sport was successfully added!'
+        return render_template('addsport.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
+
 @app.route('/metrics')
 def metrics():
-    title="MyApp - List Metrics"
+    title="MyApp - List of metrics"
     db = get_db()
-    sports = db.query("SELECT * from metric")
+    metrics = db.query("SELECT * from metric")
     return render_template('metrics.html', title=title, metrics=metrics)
 
 @app.route('/addmetric', methods=['POST', 'GET'])
@@ -115,12 +133,9 @@ def add_metric():
     msg = None
     if session['username']:
         if request.method=='POST':
-            firstname = request.form['firstname']
-            lastname = request.form['lastname']
-            email = request.form['email']
-            username = request.form['username']
-            passwd = request.form['password']
-            if firstname is None or lastname is None or email is None or username is None or passwd is None:
+            name = request.form['name']
+            description = request.form['description']
+            if name is None or description is None:
                 error = 'All fields are mandatory.'
             else:
                 db = get_db()
@@ -129,3 +144,32 @@ def add_metric():
         return render_template('addmetric.html', title=title, msg=msg, error=error)
     else:
         return redirect(url_for('login'))
+
+@app.route('/sportsmen')
+def sportsman():
+    title="MyApp - List of sportsmen"
+    db = get_db()
+    sportsmen = db.query("SELECT * from sportman")
+    return render_template('sportsmen.html', title=title, sportsmen=sportsmen)
+
+@app.route('/addsportman', methods=['POST', 'GET'])
+def add_sportman():
+    title="MyApp - Add a new sportman"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            name = request.form['name']
+            nationality = request.form['nationality']
+            birth_year = request.form['birth year']
+            gender = request.form['gender']
+	    if name is None or description is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_user(username, passwd_hash, firstname, lastname, email)
+                msg = 'Sportman was successfully added!'
+        return render_template('addsportman.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
+

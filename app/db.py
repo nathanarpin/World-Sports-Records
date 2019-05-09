@@ -70,8 +70,20 @@ class db_handler:
         """
         self.edit('INSERT INTO user (username, passwd_hash, first_name, last_name, email) VALUES (?,?,?,?,?)', (username, passwd_hash, firstname, lastname, email,))
     
-    def add_metric(self, username, ...):
+    def add_metric(self, name, value, description):
         """
             Add a new metric
         """
-        self.edit('INSERT INTO metric (username, ...) VALUES (?,...)', (username, ...,))
+        self.edit('INSERT INTO metric (name, value, description) VALUES (?,?,?)', (name, value, description))
+    
+    #def add_sport(self, username, ...):
+    #    """
+    #        Add a new sport
+    #    """
+    #    self.edit('INSERT INTO metric (name, value, description) VALUES (?,?,?)', (name,value, description))
+    #
+    #def add_sportman(self, username, ...):
+    #    """
+    #        Add a new metric
+    #    """
+    #    self.edit('INSERT INTO metric (name, value, description) VALUES (?,?,?)', (name,value, description))
