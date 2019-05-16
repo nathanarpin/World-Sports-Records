@@ -146,7 +146,7 @@ def add_metric():
         return redirect(url_for('login'))
 
 @app.route('/sportsmen')
-def sportsman():
+def sportsmen():
     title="MyApp - List of sportsmen"
     db = get_db()
     sportsmen = db.query("SELECT * from sportman")

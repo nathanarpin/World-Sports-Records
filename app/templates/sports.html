@@ -6,12 +6,12 @@
       		<br>
 		<table class="table">
 		<thead>
-			<tr><td><strong>Name</strong></td><td><strong>Description</strong></td></tr>
+			<tr><td><strong>id</strong></td><td><strong>Name</strong></td><td><strong>Description</strong></td></tr>
 		</thead>
 		<tbody>
     		{% for sport in sports %}
 		<tr>
-			<td>{{ sport.name }}</td><td>{{ sport.description }}</td>
+			<td>{{ sport.id }}</td><td>{{ sport.name }}</td><td>{{ sport.description }}</td>
 		</tr>
     		{% endfor %}
 		</tbody>
