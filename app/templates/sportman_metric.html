@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<h1>List of Sportman metrics</h1>
+      		<br>
+		<table class="table">
+		<thead>
+			<tr><td><strong>sportman_id</strong></td><td><strong>metric_id</strong></td><td><strong>value</strong></td></tr>
+		</thead>
+		<tbody>
+    		{% for sportman_metric in sportman_metric %}
+		<tr>
+			<td>{{ sportman_metric.sportman_id }}</td><td>{{ sportman_metric.metric_id }}</td><td>{{ sportman_metric.value }}</td>
+		</tr>
+    		{% endfor %}
+		</tbody>
+		</table>
+	</div>
+{% endblock %}

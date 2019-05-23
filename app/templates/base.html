@@ -10,7 +10,7 @@
 		    {% if session['username'] %}<a href="/users">Users</a> | {% endif %} 
 		    <a href="/sports">List of Sports</a> | 
 		    <a href="/metrics">List of Metrics</a> | 
-		    <a href="/sportsmen">List of Sportsmen</a> | 
+		    <a href="/sportsmen">List of Sportsmen</a> |   
 		    {% if session['username'] %}<a href="/logout">Logout</a> {% else %} <a href="/login">Login</a>  {% endif %} 
 		    {% if session['username'] %}(Logged as <strong>{{ session['username'] }}</strong>){% endif %}</div>
         <hr>

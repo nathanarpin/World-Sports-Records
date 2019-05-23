@@ -173,3 +173,57 @@ def add_sportman():
     else:
         return redirect(url_for('login'))
 
+app.route('/sportman_metric')
+def sportman_metric():
+    title="MyApp - List of sportman metrics"
+    db = get_db()
+    sportman_metric = db.query("SELECT * from sportman_metric")
+    return render_template('sportman_metric.html', title=title, sportman_metric=sportman_metric)
+
+@app.route('/addsportman_metric', methods=['POST', 'GET'])
+def add_sportman_metric():
+    title="MyApp - Add a new sportman metric"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            sportman_id = request.form['sportman_id']
+            metric_id = request.form['metric_id']
+            value = request.form['value']
+            if name is None or description is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_user(username, passwd_hash, firstname, lastname, email)
+                msg = 'Sportman metric was successfully added!'
+        return render_template('addsportman_metric.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
+
+app.route('/sport_metric')
+def sport_metric():
+    title="MyApp - List of sport metrics"
+    db = get_db()
+    sport_metric = db.query("SELECT * from sport_metric")
+    return render_template('sport_metric.html', title=title, sport_metric=sport_metric)
+
+@app.route('/addsport_metric', methods=['POST', 'GET'])
+def add_sport_metric():
+    title="MyApp - Add a new sport metric"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            sport_id = request.form['sport_id']
+            sportman_id = request.form['sportman_id']
+            if name is None or description is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_user(username, passwd_hash, firstname, lastname, email)
+                msg = 'Sport metric was successfully added!'
+        return render_template('addsport_metric.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
+
+
