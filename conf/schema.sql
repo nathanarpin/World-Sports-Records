@@ -103,7 +103,6 @@ INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (11,'Way
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (12,'Jaromir Jagr', 'Czech', '1972', 'M');
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (13,'Mark Messier', 'Canadian', '1961', 'M');
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (14,'Gordie Howe', 'Canada', '1928', 'M');
-INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (14,'Gordie Howe', 'Canada', '1928', 'M');
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (15,'Ron Francis', 'Canada', '1963', 'M');
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (16,'Marcel Dionne', 'Canada', '1951', 'M');
 INSERT INTO sportman (id, name, nationality, birth_year, gender) VALUES (17,'Steve Yzerman', 'Canada', '1965', 'M');

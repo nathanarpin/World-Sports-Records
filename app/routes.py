@@ -14,10 +14,9 @@ def teardown_db(exception):
     if db is not None:
         db.close()
 
-@app.route('/')
 @app.route('/index')
 def index():
-    title="MyApp - Welcome!"
+    title="MyApp - Welcome to WSR!"
     return render_template('index.html', title=title)
 
 @app.route('/users')
@@ -85,10 +84,6 @@ def ex1():
     posts = [
         {
             'body': 'Welcome to World Sports Records!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
         }
     ]
     return render_template('ex1.html', title=title, user=user, posts=posts)
@@ -149,7 +144,7 @@ def add_metric():
 def sportsmen():
     title="MyApp - List of sportsmen"
     db = get_db()
-    sportsmen = db.query("SELECT a.sportman_name, a.nationality, a.birth_year, a.gender, e.sport_name from sportman AS a, sportman_metric AS b, metric AS c, sport_metric AS d, sport AS e WHERE b.sportman_id = a.id AND b.metric_id = c.id AND c.id = d.metric_id AND d.sport_id = e.id")
+    sportsmen = db.query("SELECT * FROM sportman")
     return render_template('sportsmen.html', title=title, sportsmen=sportsmen)
 
 @app.route('/addsportman', methods=['POST', 'GET'])
