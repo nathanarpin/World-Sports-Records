@@ -14,6 +14,7 @@ def teardown_db(exception):
     if db is not None:
         db.close()
 
+@app.route('/')
 @app.route('/index')
 def index():
     title="MyApp - Welcome to WSR!"
@@ -144,7 +145,26 @@ def add_metric():
 def sportsmen():
     title="MyApp - List of sportsmen"
     db = get_db()
-    sportsmen = db.query("SELECT * FROM sportman")
+    sportsmen = db.query("""	SELECT sportman.name AS name, sportman.nationality AS nationality, sportman.birth_year AS birthyear, sportman.gender AS gender, sport.name AS sport  
+				FROM sportman, sport , sportman_metric , metric, sport_metric
+				WHERE sportman_metric.sportman_id = sportman.id
+				AND metric.id = sportman_metric.metric_id 
+				AND metric.id = sport_metric.metric_id
+				AND sport_metric.sport_id = sport.id """)
+
+    '''    sportsnames = db.query("""    SELECT sport.name FROM sportman, sport , sportman_metric , metric, sport_metric
+                                WHERE sportman_metric.sportman_id = sportman.id
+                                AND metric.id = sportman_metric.metric_id 
+                                AND metric.id = sport_metric.metric_id
+                                AND sport_metric.sport_id = sport.id """)
+
+    names = db.query("""	SELECT sportman.name FROM sportman, sport , sportman_metric , metric, sport_metric
+                                WHERE sportman_metric.sportman_id = sportman.id
+                                AND metric.id = sportman_metric.metric_id 
+                                AND metric.id = sport_metric.metric_id
+                                AND sport_metric.sport_id = sport.id """)
+    '''
+    print(sportsmen)
     return render_template('sportsmen.html', title=title, sportsmen=sportsmen)
 
 @app.route('/addsportman', methods=['POST', 'GET'])

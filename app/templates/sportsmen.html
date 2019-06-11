@@ -6,15 +6,14 @@
       		<br>
 		<table class="table">
 		<thead>
-			<tr><td><strong>Name</strong></td><td><strong>Nationality</strong></td><td><strong>Birth_year</strong></td><td><strong>Gender</strong></td></tr>
+			<tr><td><strong>Name</strong></td><td><strong>Nationality</strong></td><td><strong>Birth_year</strong></td><td><strong>Gender</strong></td><td><strong>Sport</strong></td></tr>
 		</thead>
 		<tbody>
     		{% for sportsmen  in sportsmen %}
 		<tr>
-			<td>{{ sportsmen.name }}</td><td>{{ sportsmen.nationality }}</td><td>{{ sportsmen.birth_year }}</td><td>{{ sportsmen.gender }}</td>
+			<td>{{ sportsmen.name }}</td><td>{{ sportsmen.nationality }}</td><td>{{ sportsmen.birthyear }}</td><td>{{ sportsmen.gender }}</td><td>{{ sportsmen.sport }}</td>
 		</tr>
-    		{% endfor %}
-		</tbody>
+		{% endfor %}
 		</table>
 	</div>
 {% endblock %}
