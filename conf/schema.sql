@@ -1,11 +1,11 @@
 -- CREATE TABLE user
 -- (
---	username VARCHAR(64) NOT NULL,
---	passwd_hash VARCHAR(64) NOT NULL,
---	first_name VARCHAR(64) DEFAULT NULL,
---	last_name VARCHAR(64) DEFAULT NULL,
---	email VARCHAR(128) DeFAULT NULL
--- ); 
+--      username VARCHAR(64) NOT NULL,
+--      passwd_hash VARCHAR(64) NOT NULL,
+--      first_name VARCHAR(64) DEFAULT NULL,
+--      last_name VARCHAR(64) DEFAULT NULL,
+--      email VARCHAR(128) DeFAULT NULL
+-- );
 
 CREATE TABLE favorite_sport (
     user_id integer NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE favorite_sportman (
 
 -- Table: metric
 CREATE TABLE metric (
-    id integer NOT NULL, 
+    id integer NOT NULL,
     name varchar(64) NOT NULL,
     description varchar(255) NOT NULL
 );
@@ -53,7 +53,7 @@ CREATE TABLE sportman_metric (
 
 -- Table: sportman
 CREATE TABLE sportman (
-    id integer NOT NULL, 
+    id integer NOT NULL,
     name varchar(64) NOT NULL,
     nationality varchar(64) NOT NULL,
     birth_year numeric NOT NULL,
@@ -69,6 +69,7 @@ CREATE TABLE user (
     email varchar(128) NOT NULL,
     role_id integer NOT NULL
 );
+
 
 INSERT INTO role (id, name) VALUES (1, 'admin');
 INSERT INTO role (id, name) VALUES (2, 'user');

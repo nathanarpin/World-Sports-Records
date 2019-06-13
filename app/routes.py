@@ -145,25 +145,13 @@ def add_metric():
 def sportsmen():
     title="MyApp - List of sportsmen"
     db = get_db()
-    sportsmen = db.query("""	SELECT sportman.name AS name, sportman.nationality AS nationality, sportman.birth_year AS birthyear, sportman.gender AS gender, sport.name AS sport  
-				FROM sportman, sport , sportman_metric , metric, sport_metric
-				WHERE sportman_metric.sportman_id = sportman.id
-				AND metric.id = sportman_metric.metric_id 
+    sportsmen = db.query("""	SELECT sportman.name AS name, sportman.nationality AS nationality, sportman.birth_year AS birthyear, sportman.gender AS gender, sport.name AS sport, sportman_metric.value AS value
+				FROM sportman, sport, sportman_metric, metric, sport_metric 
+				WHERE sportman_metric.sportman_id = sportman.id 
+				AND metric.id = sportman_metric.metric_id
 				AND metric.id = sport_metric.metric_id
 				AND sport_metric.sport_id = sport.id """)
 
-    '''    sportsnames = db.query("""    SELECT sport.name FROM sportman, sport , sportman_metric , metric, sport_metric
-                                WHERE sportman_metric.sportman_id = sportman.id
-                                AND metric.id = sportman_metric.metric_id 
-                                AND metric.id = sport_metric.metric_id
-                                AND sport_metric.sport_id = sport.id """)
-
-    names = db.query("""	SELECT sportman.name FROM sportman, sport , sportman_metric , metric, sport_metric
-                                WHERE sportman_metric.sportman_id = sportman.id
-                                AND metric.id = sportman_metric.metric_id 
-                                AND metric.id = sport_metric.metric_id
-                                AND sport_metric.sport_id = sport.id """)
-    '''
     print(sportsmen)
     return render_template('sportsmen.html', title=title, sportsmen=sportsmen)
 
@@ -178,6 +166,7 @@ def add_sportman():
             nationality = request.form['nationality']
             birth_year = request.form['birth year']
             gender = request.form['gender']
+            sport_id = request.form['sport id']
 	    if name is None or description is None:
                 error = 'All fields are mandatory.'
             else:

@@ -2,8 +2,9 @@
 
 {% block content %}
 	<div class="container">
-		<h1>Welcome <b>{% if session['username'] %} {{ session['username'] }} {% else %} Guest {% endif %}</b>!</h1>
-      		<br>
-    		<div><p>This is my first Flask app :-)</p></div>
+		<h1>Welcome to World Sports Records, <b>{% if session['username'] %} {{ session['username'] }} {% else %} Guest {% endif %}</b>!</h1>
+		<br>
+		<img src="http://www.enquinlezguinegatte.fr/wp-content/uploads/2017/11/SPORT-600x380.jpg">
+    		<div><p>Here you can search the All time best sportsmen in the 10 most popular sports :)</p></div>
 	</div>
 {% endblock %}
